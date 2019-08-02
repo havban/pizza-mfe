@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>My Cart</title>
+  <link href="../css/index.css"  rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<a href="/pizza"> Back </a>
+<h1>My Cart: </h1>
+<div id="cart"></div>
+<div>
+  <br/>
+  <br/>
+  <button>Pay Now</button>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/pizza.js"></script>
+<script>
+function renderCart () {
+  const el = window.cart
+  el.innerHTML = getCart().map(i => {
+    const item = items[i]
+    return `
+<div>
+  <div class="pizza-item">
+    <div>
+      <img src="${item.image}" class="pizza-image"/>
+    </div>
+    ${item.name}
+    <div>
+      Rp. ${item.price} <button onclick="removeCart(${i}, renderCart)">x</button>
+    </div>
+  </div>
+</div>
+    `
+  })
+}
+
+// init
+renderCart()
+</script>
+</body>
+</html>

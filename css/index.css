@@ -1,0 +1,8 @@
+.pizza-image {
+    max-width: 50px;
+}
+.pizza-item {
+    display: table-cell;
+    white-space: nowrap;
+    min-width: 100px;
+}

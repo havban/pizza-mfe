@@ -1,0 +1,104 @@
+<html>
+<head>
+  <title>My Pizza</title>
+  <link href="./css/index.css"  rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1>
+  Welcome to my pizza. Here are the list of options:
+</h1>
+<div> Cart: <span id="cart-length"></span> <a href="/pizza/cart"> View </a></div>
+<div>
+  <div>
+    &nbsp;
+  </div>
+  <div class="pizza-item">
+    <div>
+      <img src="./images/pizza/capri.png" class="pizza-image"/>
+    </div>
+    Capri
+    <div>
+      <button onclick="addToCart(0)">Add To Cart</button>
+    </div>
+  </div>
+  <div class="pizza-item">
+    <div>
+      <img src="./images/pizza/hawaiian.png" class="pizza-image"/>
+    </div>
+    Hawaiian
+    <div>
+      <button onclick="addToCart(1)">Add To Cart</button>
+    </div>
+  </div>
+  <div class="pizza-item">
+    <div>
+      <img src="./images/pizza/marg.png" class="pizza-image"/>
+    </div>
+    Margarita
+    <div>
+      <button onclick="addToCart(2)">Add To Cart</button>
+    </div>
+  </div>
+  <div class="pizza-item">
+    <div>
+      <img src="./images/pizza/mexican.png" class="pizza-image"/>
+    </div>
+    Mexican
+    <div>
+      <button onclick="addToCart(3)">Add To Cart</button>
+    </div>
+  </div>
+  <div class="pizza-item">
+    <div>
+      <img src="./images/pizza/mushroom.png" class="pizza-image"/>
+    </div>
+    Mushroom
+    <div>
+      <button onclick="addToCart(4)">Add To Cart</button>
+    </div>
+  </div>
+  <div class="pizza-item">
+    <div>
+      <img src="./images/pizza/pepperoni.png" class="pizza-image"/>
+    </div>
+    Pepperoni
+    <div>
+      <button onclick="addToCart(5)">Add To Cart</button>
+    </div>
+  </div>
+  <div class="pizza-item">
+    <div>
+      <img src="./images/pizza/seafood.png" class="pizza-image"/>
+    </div>
+    Seafood
+    <div>
+      <button onclick="addToCart(6)">Add To Cart</button>
+    </div>
+  </div>
+  <div class="pizza-item">
+    <div>
+      <img src="./images/pizza/veggie.png" class="pizza-image"/>
+    </div>
+    Veggie
+    <div>
+      <button onclick="addToCart(7)">Add To Cart</button>
+    </div>
+  </div>
+</div>
+<script src="./js/storage.js"></script>
+<script src="./js/cart.js"></script>
+<script src="./js/pizza.js"></script>
+<script>
+function updateCartCount () {
+  const el = window['cart-length']
+  el.innerHTML = getCart().length
+}
+
+function addToCart (i) {
+  addCart(i,updateCartCount)
+}
+// init call
+updateCartCount()
+</script>
+</body>
+</html>
